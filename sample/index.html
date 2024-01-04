@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>CKEditor for QuPath Edu</title>
+</head>
+<body>
+
+<p class="ckeditor--loading" style="text-align: center; font-size:30px">Loading editor ...</p>
+
+<div class="editor" style="display: none">
+	Hello World
+</div>
+
+<script src="../build/ckeditor.js"></script>
+<script>
+	ClassicEditor.create(document.querySelector('.editor'), {
+		toolbar: {
+			items: [
+				'undo',
+				'redo',
+				'removeFormat',
+				'|',
+				'heading',
+				'|',
+				'fontFamily',
+				'fontSize',
+				'bold',
+				'italic',
+				'underline',
+				'strikethrough',
+				'fontColor',
+				'fontBackgroundColor',
+				'|',
+				'link',
+				'insertImage',
+				'mediaEmbed',
+				'|',
+				'alignment',
+				'|',
+				'bulletedList',
+				'numberedList',
+				'indent',
+				'outdent',
+				'|',
+				'subscript',
+				'superscript',
+				'|',
+				'blockQuote',
+				'insertTable',
+				'|',
+				'highlight',
+				'horizontalLine',
+				'|',
+				'codeBlock',
+				'specialCharacters'
+			]
+		},
+		language: 'en',
+		image: {
+			resizeUnit: 'px',
+			styles: [
+				'alignLeft', 'alignCenter', 'alignRight'
+			],
+			toolbar: [
+				'imageStyle:alignLeft', 'imageStyle:alignCenter', 'imageStyle:alignRight',
+				'|',
+				'imageTextAlternative'
+			]
+		},
+		table: {
+			contentToolbar: [
+				'tableAlignment',
+				'tableColumn',
+				'tableRow',
+				'mergeTableCells',
+				'tableCellProperties',
+				'tableProperties'
+			]
+		},
+		licenseKey: '',
+		simpleUpload: {
+			uploadUrl: '',
+
+			headers: {}
+	},
+
+	}).then( editor => {
+		window.editor = editor;
+
+		document.querySelector('.ckeditor--loading').style.display = "none";
+
+	}).catch( error => {
+		document.querySelector('.ckeditor--loading').innerText = "Oops, something went wrong! See console for more information.";
+
+		console.log( 'Oops, something went wrong when initializing CKEditor' );
+		console.log( error );
+		console.log( error.stack );
+	});
+</script>
+
+</body>
+</html>

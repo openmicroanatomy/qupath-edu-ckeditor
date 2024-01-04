@@ -1,21 +1,22 @@
-# CKEditor for QuPath
+# CKEditor for QuPath Edu
+
+WYSIWYG editor used by QuPath Edu.
 
 ## Building
 
 1. `npm install`
-2. `yarn run build`
+2. `npm run build`
 
-Your `ckeditor.js` will be at `build/ckeditor.js`.
+`ckeditor.js` will be available at `build/ckeditor.js`, which can be copied over to `src/main/resources/ckeditor/ckeditor.js` in `qupath-edu-extension`.
 
 ## CSS
 
-1. `npm install --save mini-css-extract-plugin css-loader`
-
-Your `styles.css` will be at `build/styles.css`
+Content styles (i.e. `src/main/resources/css/ckeditor.css` in `qupath-edu-extension`) are available at https://ckeditor.com/docs/ckeditor5/latest/installation/advanced/content-styles.html#the-full-list-of-content-styles.
 
 ## Add new plugin
 
-1. Add to `package.json` under `dependencies` if necessary
-2. Add to `src/ckeditor.js` 
-3. Run **Building** and **CSS** commands
-- Make any additional changes (e.g. to `ckeditor.html` in `qupath-edu-extension`)
+1. Add plugin to `package.json` under `dependencies` if necessary
+2. Add plugin to `src/ckeditor.js` under `builtinPlugins`
+3. Run **Building** commands
+
+Remember to make any additional changes to `src/main/resources/html/ckeditor.html` in `qupath-edu-extension` (i.e. add button to toolbar or configuration).
