@@ -1,58 +1,25 @@
 {
     "name": "qupath-edu-ckeditor",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "CKEditor for QuPath Edu",
-    "main": "./build/ckeditor.js",
+    "type": "module",
     "files": [
-        "build"
+        "dist"
     ],
     "dependencies": {
-        "@ckeditor/ckeditor5-alignment": "43.1.0",
-        "@ckeditor/ckeditor5-autoformat": "43.1.0",
-        "@ckeditor/ckeditor5-basic-styles": "43.1.0",
-        "@ckeditor/ckeditor5-block-quote": "43.1.0",
-        "@ckeditor/ckeditor5-code-block": "43.1.0",
-        "@ckeditor/ckeditor5-editor-classic": "43.1.0",
-        "@ckeditor/ckeditor5-essentials": "43.1.0",
-        "@ckeditor/ckeditor5-font": "43.1.0",
-        "@ckeditor/ckeditor5-heading": "43.1.0",
-        "@ckeditor/ckeditor5-highlight": "43.1.0",
-        "@ckeditor/ckeditor5-horizontal-line": "43.1.0",
-        "@ckeditor/ckeditor5-image": "43.1.0",
-        "@ckeditor/ckeditor5-indent": "43.1.0",
-        "@ckeditor/ckeditor5-link": "43.1.0",
-        "@ckeditor/ckeditor5-list": "43.1.0",
-        "@ckeditor/ckeditor5-media-embed": "43.1.0",
-        "@ckeditor/ckeditor5-paragraph": "43.1.0",
-        "@ckeditor/ckeditor5-paste-from-office": "43.1.0",
-        "@ckeditor/ckeditor5-remove-format": "43.1.0",
-        "@ckeditor/ckeditor5-special-characters": "43.1.0",
-        "@ckeditor/ckeditor5-table": "43.1.0",
-        "@ckeditor/ckeditor5-typing": "43.1.0",
-        "@ckeditor/ckeditor5-upload": "43.1.0"
+        "ckeditor5": "^46.0.0"
     },
     "devDependencies": {
-        "@ckeditor/ckeditor5-core": "43.1.0",
-        "@ckeditor/ckeditor5-dev-translations": "42.1.0",
-        "@ckeditor/ckeditor5-dev-utils": "42.1.0",
-        "@ckeditor/ckeditor5-theme-lark": "43.1.0",
-        "css-loader": "^5.2.7",
-        "mini-css-extract-plugin": "^1.6.2",
-        "postcss-loader": "^4.3.0",
-        "raw-loader": "^4.0.2",
-        "style-loader": "^2.0.0",
-        "terser-webpack-plugin": "4.2.3",
-        "webpack": "^5.89.0",
-        "webpack-cli": "^4.10.0"
+        "terser": "^5.43.1",
+        "vite": "^7.1.0"
     },
     "engines": {
         "node": ">=12.0.0",
         "npm": ">=5.7.1"
     },
-    "author": "CKSource (http://cksource.com/)",
+    "author": "CKSource (https://cksource.com/)",
     "license": "GPL-2.0-or-later",
     "scripts": {
-        "build": "webpack --mode production",
-        "preversion": "npm run build"
+        "build": "vite build"
     }
 }

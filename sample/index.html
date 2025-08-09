@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<title>CKEditor for QuPath Edu</title>
+	<link rel="stylesheet" href="../dist/ckeditor.css" />
 </head>
 <body>
 
@@ -11,79 +12,15 @@
 	Hello World
 </div>
 
-<script src="../build/ckeditor.js"></script>
+<script src="../dist/ckeditor.umd.cjs"></script>
 <script>
-	ClassicEditor.create(document.querySelector('.editor'), {
-		toolbar: {
-			items: [
-				'undo',
-				'redo',
-				'removeFormat',
-				'|',
-				'heading',
-				'|',
-				'fontFamily',
-				'fontSize',
-				'bold',
-				'italic',
-				'underline',
-				'strikethrough',
-				'fontColor',
-				'fontBackgroundColor',
-				'|',
-				'link',
-				'insertImage',
-				'mediaEmbed',
-				'|',
-				'alignment',
-				'|',
-				'bulletedList',
-				'numberedList',
-				'indent',
-				'outdent',
-				'|',
-				'subscript',
-				'superscript',
-				'|',
-				'blockQuote',
-				'insertTable',
-				'|',
-				'highlight',
-				'horizontalLine',
-				'|',
-				'codeBlock',
-				'specialCharacters'
-			]
-		},
-		language: 'en',
-		image: {
-			resizeUnit: 'px',
-			styles: [
-				'alignLeft', 'alignCenter', 'alignRight'
-			],
-			toolbar: [
-				'imageStyle:alignLeft', 'imageStyle:alignCenter', 'imageStyle:alignRight',
-				'|',
-				'imageTextAlternative'
-			]
-		},
-		table: {
-			contentToolbar: [
-				'tableAlignment',
-				'tableColumn',
-				'tableRow',
-				'mergeTableCells',
-				'tableCellProperties',
-				'tableProperties'
-			]
-		},
-		licenseKey: '',
+	ckeditor.create(document.querySelector('.editor'), {
+		licenseKey: 'GPL',
 		simpleUpload: {
 			uploadUrl: '',
 
 			headers: {}
-	},
-
+		}
 	}).then( editor => {
 		window.editor = editor;
 

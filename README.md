@@ -7,11 +7,11 @@ WYSIWYG editor used by QuPath Edu.
 1. `npm install`
 2. `npm run build`
 
-`ckeditor.js` will be available at `build/ckeditor.js`, which can be copied over to `src/main/resources/ckeditor/ckeditor.js` in `qupath-edu-extension`.
+Built CKEditor will be available at `dist/ckeditor.umd.cjs`, which can be copied over to `src/main/resources/ckeditor/ckeditor.js` in `qupath-edu-extension`.
 
 ## CSS
 
-Content styles (i.e. `src/main/resources/css/ckeditor.css` in `qupath-edu-extension`) are available at https://ckeditor.com/docs/ckeditor5/latest/installation/advanced/content-styles.html#the-full-list-of-content-styles.
+Exported `dist/ckeditor.css` includes both content and editor styling. Content must be contained in a `.ck-content` class for the styles to apply. More info available at: https://ckeditor.com/docs/ckeditor5/latest/installation/advanced/content-styles.html#the-full-list-of-content-styles.
 
 ## Add new plugin
 
